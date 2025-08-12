@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <h1>📝 Blog Post Manager</h1>
+        <p>Create, edit, and manage your blog posts</p>
+      </header>
+
+      <main class="main">
+        <!-- Blog Post Form -->
+        <section class="form-section">
+          <h2>Create New Post</h2>
+          <form id="blog-form" class="blog-form">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" id="title" name="title" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="author">Author</label>
+              <input type="text" id="author" name="author" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="body">Content</label>
+              <textarea id="body" name="body" rows="6" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">
+              <span class="material-symbols-outlined">add</span>
+              Create Post
+            </button>
+          </form>
+        </section>
+
+        <!-- Controls -->
+        <section class="controls">
+          <div class="sort-controls">
+            <label for="sort-by">Sort by:</label>
+            <select id="sort-by">
+              <option value="timestamp">Newest First</option>
+              <option value="author">Author (A-Z)</option>
+            </select>
+          </div>
+          
+          <div class="filter-controls">
+            <label for="author-filter">Filter by author:</label>
+            <input type="text" id="author-filter" placeholder="Enter author name...">
+            <button id="clear-filter" class="btn btn-secondary">Clear</button>
+          </div>
+        </section>
+
+        <!-- Blog Posts List -->
+        <section class="posts-section">
+          <h2>Blog Posts</h2>
+          <div id="posts-container" class="posts-container">
+            <!-- Posts will be dynamically added here -->
+          </div>
+          <div id="no-posts" class="no-posts" style="display: none;">
+            <p>No blog posts yet. Create your first post above!</p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
